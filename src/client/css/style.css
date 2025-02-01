@@ -1,0 +1,502 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap');
+/* Fade-in animation for product cards */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply fade-in animation to product cards */
+.card {
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Slide-in animation for About page */
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* Style for the search button */
+.search-bar button {
+    background-color: #ff9800; /* Yellow background */
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Icon inside the button */
+.search-bar button i {
+    color: white; /* White icon */
+    font-size: 16px;
+}
+
+/* Hover effect */
+.search-bar button:hover {
+    background-color: #e68900; /* Slightly darker yellow */
+    transform: scale(1.05); /* Small pop-out effect */
+}
+
+/* Remove default styles from the anchor inside the button */
+.search-bar button a {
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+/* About Page - Animate Image */
+.about-img {
+    animation: slideInLeft 5s ease-in-out;
+}
+
+/* About Page - Animate Text */
+.about-section {
+    animation: slideInRight 1s ease-in-out;
+}
+
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: #1c1c1c;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff9800;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: #333;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    color: white;
+    outline: none;
+    padding: 5px;
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.icons a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.icons a:hover {
+    color: #ff9800;
+}
+
+/* Adjust the carousel image height */
+.carousel-image {
+    height: 500px; /* Adjust the height as per your preference */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+/* Add some overlay effect for better text visibility on carousel */
+.carousel-item {
+    position: relative;
+}
+.carousel-item img {
+    filter: brightness(0.6); /* Darkens the image */
+}
+
+/* Add a text overlay on carousel images */
+.carousel-item .carousel-caption {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+/* Style for the modal content */
+.delete-confirmation {
+    color: #ff9800; /* Orange color */
+    background-color: #444; /* Dark background */
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for the modal background */
+.modal-content {
+    background-color: #444; /* Dark background for the entire modal */
+    color: #fff; /* White text for the modal */
+}
+
+/* Modal header (Title and close button) */
+.modal-header {
+    background-color: #333; /* Slightly lighter black for header */
+    border-bottom: 1px solid #444; /* Subtle border separation */
+    color: #fff;
+}
+
+/* Close (X) button */
+.modal-header .btn-close {
+    color: #ff9800; /* Orange color for the close button */
+    border: none;
+}
+
+/* Modal footer (Buttons) */
+.modal-footer {
+    background-color: #333; /* Same as modal header */
+    border-top: 1px solid #444; /* Subtle border separation */
+}
+
+/* Modal buttons */
+.modal-footer .btn {
+    color: #fff;
+    background-color: #444; /* Dark buttons */
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for buttons */
+.modal-footer .btn:hover {
+    background-color: #ff9800; /* Change to orange on hover */
+    color: #1a1a1a; /* Dark text when hovered */
+}
+
+
+/* Shop Description Section */
+.shop-description h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.shop-description p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    font-weight: 300;
+}
+
+/* Make the "Shop Now" button stand out */
+.shop-description .btn {
+    background-color: #ff9800;
+    border: none;
+    font-size: 18px;
+}
+
+.shop-description .btn:hover {
+    background-color: #e68900;
+}
+
+/* Make sure the footer has proper spacing */
+footer {
+    padding: 20px;
+}
+/* About Page Section */
+.about-section {
+    background-color: #1c1c1c; /* Dark background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    margin: 20px;
+}
+
+/* Styling for the image */
+.about-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover; /* Ensures image fits nicely */
+    border: 5px solid #ff9800; /* Border color */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Adds a shadow */
+}
+
+/* Text under the image */
+h2 {
+    /* font-family: 'Lobster', cursive; */
+    color: #ff9800;
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+/* Styling for the About Me Section */
+.about-section h3 {
+    border: 5px solid #ff9800;
+    font-size: 36px;
+    color: #ff9800; /* Accent color for headers */
+}
+
+.about-section p {
+    font-size: 18px;
+    color: #f4f4f4; /* Lighter color for readability */
+    line-height: 1.6; /* Spacing between lines */
+}
+/* Justify text for better line endings */
+.text-justify {
+    text-align: justify;
+    line-height: 1.6; /* Optional: Adds more space between lines for readability */
+}
+
+
+/* Footer Styling */
+footer {
+    padding: 20px;
+    background-color: #1c1c1c;
+    color: #f4f4f4;
+}
+
+/* Styling for valid and invalid form fields */
+.is-invalid {
+    border-color: red;
+}
+
+.is-valid {
+    border-color: green;
+}
+
+.invalid-feedback {
+    display: block;
+    color: red;
+}
+
+.is-valid + .invalid-feedback {
+    display: none;
+}
+
+.is-invalid + .valid-feedback {
+    display: none;
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #1c1c1c; /* Dark background for the card */
+    color: white; /* White text for readability */
+    border: none; /* Remove the default card border */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ff9800; /* Accent color for the title */
+}
+
+.card-text {
+    font-size: 1rem;
+}
+
+.card-text strong {
+    font-weight: 700;
+    color: #ff9800; /* Accent color for the strong text */
+}
+
+.btn {
+    width: 130px;
+    padding: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.btn-outline-success {
+    border-color: #28a745;
+    color: #28a745;
+}
+
+.btn-outline-success:hover {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-outline-warning {
+    border-color: #ffc107;
+    color: #ffc107;
+}
+
+.btn-outline-warning:hover {
+    background-color: #ffc107;
+    color: white;
+}
+
+.btn-outline-danger {
+    border-color: #dc3545;
+    color: #dc3545;
+}
+
+.btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.card-img-top {
+    height: 325px;
+    object-fit: cover;
+    border-bottom: 1px solid #ff9800;
+}
+
+/* Input fields (text, number, etc.) styling */
+.form-control {
+    background-color: #333; /* Dark background for input fields */
+    color: white; /* White text color */
+    border: 1px solid #444; /* Slightly lighter border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.form-control:focus {
+    background-color: #444; /* Slightly lighter background when focused */
+    border-color: #ff9800; /* Border color when focused (orange) */
+    color: white; /* Maintain white text on focus */
+    box-shadow: 0 0 5px rgba(255, 152, 0, 0.7); /* Orange shadow on focus */
+}
+
+/* Input fields with errors */
+.form-control.is-invalid {
+    border-color: #dc3545; /* Red border on invalid input */
+    background-color: #ffcccc; /* Light red background for error */
+}
+
+.form-control.is-valid {
+    border-color: #28a745; /* Green border on valid input */
+    background-color: #d4edda; /* Light green background for success */
+}
+.text-center mb-4 text-primary{
+    color: #ff9800;
+}
+
+/* Button Styling */
+button[type="submit"] {
+    background-color: #ff9800; /* Orange background for submit button */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #e68900; /* Slightly darker orange on hover */
+    transform: translateY(-3px); /* Small hover effect */
+}
+
+/* Button disabled state */
+button[type="submit"]:disabled {
+    background-color: #6c757d; /* Gray background when disabled */
+    cursor: not-allowed;
+}
+/* Stylish heading for Create Product */
+h3.text-center {
+    font-family: 'Oswald', sans-serif; /* Use 'Oswald' font */
+    margin-bottom: 20px; /* Add some space below the heading */
+    font-size: 2.3rem; /* Large and bold */
+    font-weight: 700;
+    color: #ff9800; /* Vibrant orange to match your theme */
+    letter-spacing: 1px;
+    animation: fadeIn 1.5s ;
+
+}
+
+/* Optional animation to make it funky */
+@keyframes funkyBounce {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+
+/* Override Bootstrap's text-primary class */
+.text-primary {
+    color: #ff9800 !important; /* Orange color, now this will override the blue default */
+}
