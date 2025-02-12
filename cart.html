@@ -1,0 +1,56 @@
+<!--
+    Name: Milan Patel
+    filename: cart.html
+    Course: INFT 2202
+    Date: February 1, 2025
+    Description: This file contains the cart page of the web store. It displays the products in the cart and allows the user to manage the cart.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Store - Cart</title>
+
+    <!-- Bootstrap 5 CSS (CDN) -->
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+    <!-- Font Awesome CSS (for icons) -->
+    <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo" style="font-family: 'Arial', sans-serif; font-size: 1.5rem; font-weight: bold; background: linear-gradient(45deg, #ffcc00, #ff9800, #ff9800, #ff9800, #ffcc00); -webkit-background-clip: text; background-clip: text; color: transparent;">
+        <a href="index.html" style="text-decoration: none; color: inherit;">WebStore</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="create.html">Create</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search products...">
+            <button><a href="search.html"><i class="fas fa-search"></i></a></button>
+        </div>
+        <div class="icons">
+            <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </header>
+    <main>
+        <h1>Your Cart</h1>
+        <p>View and manage the products in your cart.</p>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white text-center p-4 mt-5">
+        <span id="copyright">© Milan Patel All Rights Reserved.</span>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
