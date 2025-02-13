@@ -500,3 +500,179 @@ h3.text-center {
 .text-primary {
     color: #ff9800 !important; /* Orange color, now this will override the blue default */
 }
+/* Phone or tablet */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    margin: 10px 0;
+}
+
+/* Make navigation mobile-friendly */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar a {
+        padding: 12px;
+        width: 100%;
+        text-align: left;
+    }
+}
+
+/* Mobile-friendly Buttons */
+button {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+/* Responsive Image */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Flexbox Layout */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.item {
+    flex: 1 1 30%;
+    margin: 10px;
+}
+
+@media (max-width: 768px) {
+    .item {
+        flex: 1 1 48%;
+    }
+}
+
+@media (max-width: 480px) {
+    .item {
+        flex: 1 1 100%;
+    }
+}
+
+/* Mobile Navigation (Hamburger Menu) */
+.hamburger-menu {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger-menu span {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin: 5px 0;
+    }
+}
+
+/* Font Sizes for Mobile */
+body {
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+}
+
+/* Forms for Mobile */
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    input, textarea, select {
+        font-size: 14px;
+    }
+}
+
+/* Hide/Show elements on Mobile */
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none;
+    }
+
+    .mobile-only {
+        display: block;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 15px 0;
+    }
+}
+
+/* Add your custom styles below */
