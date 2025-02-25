@@ -507,3 +507,126 @@ h3.text-center {
 .text-primary {
     color: #ff9800 !important; /* Orange color, now this will override the blue default */
 }
+
+/* General Styles */
+
+/* Header */
+header {
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+header .logo {
+    max-width: 200px;
+    height: auto;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Media Queries */
+
+/* For Phones (max-width: 767px) */
+@media (max-width: 767px) {
+    /* Header */
+    header {
+        padding: 15px;
+        text-align: center;
+    }
+
+    header .logo {
+        width: 120px;  /* Adjust logo size */
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 5px 0;
+    }
+
+    header nav ul li a {
+        font-size: 14px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 10px;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+}
+
+/* For Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+    /* Header */
+    header {
+        padding: 20px;
+        text-align: center;
+    }
+
+    header .logo {
+        width: 150px;  /* Adjust logo size for tablets */
+    }
+
+    header nav ul {
+        justify-content: center;
+    }
+
+    header nav ul li {
+        margin: 0 20px;
+    }
+
+    header nav ul li a {
+        font-size: 16px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 15px;
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+}
