@@ -508,18 +508,21 @@ h3.text-center {
     color: #ff9800 !important; /* Orange color, now this will override the blue default */
 }
 
-/* General Styles */
+/* General Styles for Header and Icons */
 
 /* Header */
 header {
     padding: 20px;
     background-color: #333;
     color: #fff;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 header .logo {
-    max-width: 200px;
+    max-width: 150px;
     height: auto;
 }
 
@@ -528,7 +531,8 @@ header nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
 }
 
 header nav ul li {
@@ -539,6 +543,17 @@ header nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 16px;
+}
+
+header .cart-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
 }
 
 /* Footer */
@@ -553,38 +568,37 @@ footer p {
     font-size: 14px;
 }
 
-/* Body */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-/* Media Queries */
-
-/* For Phones (max-width: 767px) */
+/* Mobile View (max-width: 767px) */
 @media (max-width: 767px) {
     /* Header */
     header {
         padding: 15px;
-        text-align: center;
-    }
-
-    header .logo {
-        width: 120px;  /* Adjust logo size */
-    }
-
-    header nav ul {
         flex-direction: column;
         align-items: center;
     }
 
+    header .logo {
+        width: 120px;
+    }
+
+    header nav ul {
+        justify-content: center;
+        flex-direction: row;
+    }
+
     header nav ul li {
-        margin: 5px 0;
+        margin: 0 10px;
     }
 
     header nav ul li a {
         font-size: 14px;
+    }
+
+    /* Cart Icon (for mobile) */
+    header .cart-icon {
+        margin-left: 10px;
+        width: 40px;
+        height: 40px;
     }
 
     /* Footer */
@@ -597,20 +611,21 @@ body {
     }
 }
 
-/* For Tablets (max-width: 1024px) */
+/* Tablet View (max-width: 1024px) */
 @media (max-width: 1024px) {
     /* Header */
     header {
         padding: 20px;
-        text-align: center;
+        flex-direction: row;
     }
 
     header .logo {
-        width: 150px;  /* Adjust logo size for tablets */
+        width: 150px;
     }
 
     header nav ul {
         justify-content: center;
+        flex-direction: row;
     }
 
     header nav ul li {
@@ -619,6 +634,13 @@ body {
 
     header nav ul li a {
         font-size: 16px;
+    }
+
+    /* Cart Icon (for tablets) */
+    header .cart-icon {
+        margin-left: 15px;
+        width: 35px;
+        height: 35px;
     }
 
     /* Footer */
