@@ -7,17 +7,19 @@
 */  
 
 // Constructor function for creating Product objects  
-function Product(name, description, price, stock) {  
+function Product(name, description, price, stock, owner = null) {
     this.id = crypto.randomUUID(); // Generate a unique ID  
-    this.name = name;  
+    this.name = name;  // Store product name
     this.description = description; // Store product description  
-    this.price = price;  
-    this.stock = stock;  
-}  
+    this.price = price;  // Store product price
+    this.stock = stock;  // Store product stock
+    this.owner = owner; // Optional owner field
+}
+
 
 // Prototype method to return a formatted product summary  
 Product.prototype.getDetails = function() {  
-    return `Product Name: ${this.name}, Description: ${this.description}, Price: $${this.price}, Stock: ${this.stock}`;  
+    return `Product Name: ${this.name}, Description: ${this.description}, Price: $${this.price}, Stock: ${this.stock}, Owner: ${this.owner}`;  
 };  
 
 // Function to retrieve stored products from local storage  

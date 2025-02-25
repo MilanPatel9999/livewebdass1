@@ -6,14 +6,14 @@
     Description: This file contains the JavaScript code for the product creation page.
 */
 
-import ProductService from "./product.mock.service.js";
+import ProductService from "./product.service.js";
 
 const productService = new ProductService();
 
 // Handles the form submission event
-function handleProductSubmission(event) {
+async function handleProductSubmission(event) {
     event.preventDefault();
-    
+
     const form = event.target;
     if (!validateInputs(form)) return; // Stop if validation fails
 
@@ -24,25 +24,33 @@ function handleProductSubmission(event) {
         stock: parseInt(form.stock.value, 10),
         description: form.description.value.trim(),
     };
-    
+
     const params = new URLSearchParams(window.location.search);
     const productId = params.get('id');
 
     if (productId) {
-        const existingProduct = productService.getProductById(productId);
-        if (existingProduct) {
-            Object.assign(existingProduct, product);
-            productService.updateProduct(existingProduct);
-            displayLoading();
-            redirectAfterSuccess("Product updated successfully");
-        } else {
-            console.error("Product not found!");
+        try {
+            const existingProduct = await productService.getProductById(productId);
+            if (existingProduct) {
+                Object.assign(existingProduct, product);
+                await productService.updateProduct(productId, existingProduct);
+                displayLoading();
+                redirectAfterSuccess("Product updated successfully");
+            } else {
+                console.error("Product not found!");
+            }
+        } catch (error) {
+            console.error("Error updating product:", error);
         }
     } else {
-        product.id = crypto.randomUUID();
-        productService.addProduct(product);
-        displayLoading();
-        redirectAfterSuccess("Product added successfully");
+        try {
+            product.id = crypto.randomUUID();
+            await productService.addProduct(product);
+            displayLoading();
+            redirectAfterSuccess("Product added successfully");
+        } catch (error) {
+            console.error("Error adding product:", error);
+        }
     }
 }
 
@@ -60,7 +68,7 @@ function showMessage(elementId, text, color) {
     messageBox.textContent = text;
     messageBox.style.display = "block";
     messageBox.style.color = color;
-    setTimeout(() => messageBox.style.display = "none", 3000);
+    setTimeout(() => messageBox.style.display = "none", 10000);
 }
 
 // Validates form inputs
@@ -71,7 +79,7 @@ function validateInputs(form) {
     valid &= validateField(form.price, "Enter a valid price!", value => !isNaN(value) && value > 0);
     valid &= validateField(form.stock, "Enter a valid stock quantity!", value => !isNaN(value) && value >= 0);
     valid &= validateField(form.description, "Enter a valid description!");
-    
+
     return valid;
 }
 
@@ -105,17 +113,23 @@ function displayLoading() {
 }
 
 // Pre-fill form fields if editing an existing product
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
     const params = new URLSearchParams(window.location.search);
     const productId = params.get('id');
-    
+
     if (productId) {
-        const product = productService.getProductById(productId);
-        if (product) {
-            document.getElementById("product-name").value = product.name;
-            document.getElementById("product-price").value = product.price;
-            document.getElementById("product-stock").value = product.stock;
-            document.getElementById("product-description").value = product.description;
+        try {
+            const product = await productService.getProductById(productId); // Wait for the response
+            if (product) {
+                document.getElementById("product-name").value = product.name;
+                document.getElementById("product-price").value = product.price;
+                document.getElementById("product-stock").value = product.stock;
+                document.getElementById("product-description").value = product.description;
+            } else {
+                console.error("Product not found!");
+            }
+        } catch (error) {
+            console.error("Error fetching product:", error);
         }
     }
 });
